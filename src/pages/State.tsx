@@ -1,7 +1,15 @@
 import ClockCountdown from '@/assets/ClockCountdown.svg';
 import Hourglass from '@/assets/Hourglass.svg';
+import { useNavigate } from 'react-router-dom';
+
 
 const State: React.FC = () => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/state-active'); // Navigate to the About page
+  };
 
   return (
     <div className="w-full text-white">
@@ -16,7 +24,7 @@ const State: React.FC = () => {
         />
       </div>
 
-      <button className="w-full max-w-[646px] mt-8 mb-2 text-white text-lg font-semibold py-3 rounded-full bg-gradient-to-b from-[#D87CFD] to-[#4B30F0] shadow-inner shadow-[#ffffff33] hover:opacity-90 transition">
+      <button onClick={handleClick} className="w-full max-w-[646px] mt-8 mb-2 text-white text-lg font-semibold py-3 rounded-full bg-gradient-to-b from-[#D87CFD] to-[#4B30F0] shadow-inner shadow-[#ffffff33] hover:opacity-90 transition">
         Start Working
       </button>
 

@@ -3,10 +3,17 @@ import { Eye, EyeOff } from 'lucide-react';
 import googleIcon from '@/assets/google.svg';
 import appleIcon from '@/assets/apple.svg';
 import HomeBG from '@/assets/home_bg.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
 
   const [show, setShow] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/state'); // Navigate to the About page
+  };
 
   return (
     <div className="w-full text-white">
@@ -59,7 +66,7 @@ const Login: React.FC = () => {
           </button>
         </div>
       </div>
-      <button className="w-full max-w-[646px] mt-8 text-white text-lg font-semibold py-3 rounded-full bg-gradient-to-b from-[#D87CFD] to-[#4B30F0] shadow-inner shadow-[#ffffff33] hover:opacity-90 transition">
+      <button onClick={handleClick} className="w-full max-w-[646px] mt-8 text-white text-lg font-semibold py-3 rounded-full bg-gradient-to-b from-[#D87CFD] to-[#4B30F0] shadow-inner shadow-[#ffffff33] hover:opacity-90 transition">
         Login
       </button>
 

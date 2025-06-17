@@ -5,8 +5,16 @@ import Pause from '@/assets/pause.svg';
 import Square from '@/assets/square.svg';
 import DefaultAvatar from '@/assets/avatar.jpg';
 import CircularTimer from '@/components/UI/CircularTimer';
+import { useNavigate } from 'react-router-dom';
+
 
 const ActiveState: React.FC = () => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/'); // Navigate to the About page
+  };
 
   return (
     <div className="w-full text-white">
@@ -32,14 +40,14 @@ const ActiveState: React.FC = () => {
         </h3>
 
         <div className='flex justify-center items-center gap-2 mt-3'>
-          <button className='w-[120px] h-[44px] rounded-full border border-[#4B4A4B] bg-[#292729] flex justify-center items-center'>
+          <button onClick={handleClick} className='w-[120px] h-[44px] rounded-full border border-[#4B4A4B] bg-[#292729] flex justify-center items-center'>
             <span className="flex items-center space-x-2">
               <img src={Pause} alt="Pause Icon" className="w-auto w-4 h-4" />
               <span>Pause</span>
             </span>
           </button>
           <button className='w-[120px] h-[44px] rounded-full border border-[#4B4A4B] bg-[#292729] flex justify-center items-center'>
-            <span className="flex items-center space-x-2">
+            <span onClick={handleClick} className="flex items-center space-x-2">
               <img src={Square} alt="Finish Icon" className="w-auto w-4 h-4" />
               <span>Finish</span>
             </span>
