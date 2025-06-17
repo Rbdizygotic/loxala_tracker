@@ -4,7 +4,7 @@ import googleIcon from '@/assets/google.svg';
 import appleIcon from '@/assets/apple.svg';
 import HomeBG from '@/assets/home_bg.jpg';
 
-const Home: React.FC = () => {
+const Login: React.FC = () => {
 
   const [show, setShow] = useState(false);
 
@@ -68,4 +68,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home; 
+export default Login; 
